@@ -44,9 +44,10 @@ export default function Home() {
 
         {/* DYNAMIC DATA */}
         <section className="mt-8">
-          <Suspense fallback={<Loading />}>
-            <SensorData />
-          </Suspense>
+<Suspense fallback={<Loading />}>
+  <SensorData />
+</Suspense>
+
         </section>
 
         {/* ACTIVITY */}

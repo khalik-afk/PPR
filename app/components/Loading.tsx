@@ -1,17 +1,31 @@
 export default function Loading() {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-      <div className="flex flex-col items-center justify-center py-10">
-        <div className="h-10 w-10 animate-spin rounded-full border-4 border-white/10 border-t-cyan-400" />
+    <div className="space-y-4 w-full max-w-4xl mx-auto p-4">
+      {/* Buat perulangan 3 kartu skeleton */}
+      {[1, 2, 3].map((item) => (
+        <div 
+          key={item} 
+          className="bg-white dark:bg-zinc-800 rounded-xl p-5 shadow-sm border border-zinc-200 dark:border-zinc-700 animate-pulse"
+        >
+          {/* Header Card (Mirip judul/ikon sensor) */}
+          <div className="flex items-center justify-between mb-4">
+            <div className="h-5 bg-zinc-200 dark:bg-zinc-700 rounded w-1/4"></div>
+            <div className="h-6 w-6 bg-zinc-200 dark:bg-zinc-700 rounded-full"></div>
+          </div>
 
-        <p className="mt-5 text-sm text-gray-400">
-          Mengambil data sensor...
-        </p>
+          {/* Body Card (Mirip nilai/value sensor) */}
+          <div className="space-y-3">
+            <div className="h-8 bg-zinc-200 dark:bg-zinc-700 rounded w-1/2"></div>
+            <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-3/4"></div>
+          </div>
 
-        <p className="mt-1 text-xs text-gray-600">
-          Server sedang memproses data
-        </p>
-      </div>
+          {/* Footer Card (Mirip waktu update/status) */}
+          <div className="mt-4 pt-4 border-t border-zinc-100 dark:border-zinc-700 flex justify-between items-center">
+            <div className="h-3 bg-zinc-200 dark:bg-zinc-700 rounded w-1/5"></div>
+            <div className="h-3 bg-zinc-200 dark:bg-zinc-700 rounded w-1/6"></div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
